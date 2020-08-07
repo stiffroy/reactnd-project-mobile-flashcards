@@ -7,6 +7,7 @@ import Button from './partials/Button'
 import EmptyDeck from './partials/EmptyDeck'
 import ResultCard from "./partials/ResultCard"
 import ShowCardButton from "./partials/ShowCardButton"
+import { clearLocalNotification, setLocalNotification } from "../utils/notification"
 
 const QUESTION = 'question'
 const ANSWER = 'answer'
@@ -49,6 +50,8 @@ class Quiz extends Component {
             show: QUESTION,
             showResults: false
         })
+
+        clearLocalNotification().then(setLocalNotification)
     }
 
     goBack = () => {

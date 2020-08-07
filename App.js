@@ -7,6 +7,7 @@ import { StatusBar } from "expo-status-bar"
 import Navigation from "./components/MainNavigator"
 import reducer from '/reducers'
 import { purple } from "./utils/colors"
+import { setLocalNotification } from "./utils/notification"
 
 function BeautifulStatusBar ({backgroundColor, ...props}) {
   return (
@@ -17,16 +18,20 @@ function BeautifulStatusBar ({backgroundColor, ...props}) {
 }
 
 export default class App extends Component {
-  render() {
-      return (
-          <Provider store={createStore(reducer)}>
-              <SafeAreaView style={styles.container}>
-                  <BeautifulStatusBar backgroundColor={purple} barStyle="light-content" />
-                  <Navigation />
-              </SafeAreaView>
-          </Provider>
-      )
-  }
+    componentDidMount() {
+        setLocalNotification()
+    }
+
+    render() {
+        return (
+            <Provider store={createStore(reducer)}>
+                <SafeAreaView style={styles.container}>
+                    <BeautifulStatusBar backgroundColor={purple} barStyle="light-content" />
+                    <Navigation />
+                </SafeAreaView>
+            </Provider>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
