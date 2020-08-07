@@ -5,6 +5,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { Feather } from "@expo/vector-icons"
 import { gray, purple, lightPurp } from "../utils/colors"
 import DeckList from "./DeckList"
+import AddDeck from "./AddDeck"
 import DeckDetails from "./DeckDetails"
 
 const Tab = createMaterialBottomTabNavigator()
@@ -26,6 +27,16 @@ const BottomNav = () => (
                 }}
                 name="listDeck"
                 component={DeckList}
+            />
+            <Tab.Screen
+                options={{
+                    tabBarLabel: "Add Deck",
+                    tabBarIcon: ({ color }) => (
+                        <Feather name="plus-square" color={color} size={24} />
+                    ),
+                }}
+                name="addDeck"
+                component={AddDeck}
             />
         </Tab.Navigator>
     )
