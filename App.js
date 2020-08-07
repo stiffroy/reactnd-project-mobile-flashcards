@@ -5,7 +5,7 @@ import { StyleSheet, View, SafeAreaView } from 'react-native'
 import Constants from "expo-constants"
 import { StatusBar } from "expo-status-bar"
 import Navigation from "./components/MainNavigator"
-import reducer from '/reducers'
+import reducer from './reducers'
 import { purple } from "./utils/colors"
 import { setLocalNotification } from "./utils/notification"
 
