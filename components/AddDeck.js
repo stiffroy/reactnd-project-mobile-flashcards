@@ -7,7 +7,7 @@ import { addNewDeck } from '../actions'
 import { createDeckApi } from '../utils/api'
 import { red } from '../utils/colors'
 
-class AddDeckScreen extends Component {
+class AddDeck extends Component {
     state = {
         title: 'Title',
         minimum: 5,
@@ -77,4 +77,4 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({ addNewDeck }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(AddDeckScreen)
+export default connect(null, mapDispatchToProps)(AddDeck)

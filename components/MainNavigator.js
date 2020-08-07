@@ -5,6 +5,7 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { Feather } from "@expo/vector-icons"
 import { gray, purple, lightPurp } from "../utils/colors"
 import DeckList from "./DeckList"
+import DeckDetails from "./DeckDetails"
 
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createStackNavigator()
