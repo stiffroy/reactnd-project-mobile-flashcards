@@ -20,7 +20,7 @@ class IndividualDeckScreen extends Component {
                     <Text style={styles.cardNumber}>This deck has {deck.questions.length} cards</Text>
                 </View>
                 <View>
-                    <Button text='Start Quiz' onPress={() => this.navigate('Quiz')}/>
+                    <Button text='Start Quiz' onPress={() => this.navigate('quiz')}/>
                     <Button text='Add Card' onPress={() => this.navigate('addCard')}/>
                 </View>
             </View>

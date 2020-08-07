@@ -3,11 +3,12 @@ import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs"
 import { Feather } from "@expo/vector-icons"
-import { gray, purple, lightPurp } from "../utils/colors"
 import DeckList from "./DeckList"
 import AddDeck from "./AddDeck"
 import DeckDetails from "./DeckDetails"
 import AddCard from "./AddCard"
+import Quiz from "./Quiz"
+import { gray, purple, lightPurp } from "../utils/colors"
 
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -67,6 +68,14 @@ const Navigation = () => (
             <Stack.Screen
                 name="addCard"
                 component={AddCard}
+                options={{
+                    animationEnabled: true,
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="quiz"
+                component={Quiz}
                 options={{
                     animationEnabled: true,
                     headerShown: false,
