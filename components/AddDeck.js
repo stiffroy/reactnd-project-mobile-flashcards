@@ -7,18 +7,19 @@ import { addNewDeck } from '../actions'
 import { createDeckApi } from '../utils/api'
 import { red } from '../utils/colors'
 
+const MINIMUM_TITLE_LENGTH = 3
+
 class AddDeck extends Component {
     state = {
         title: 'Title',
-        minimum: 5,
         error: false
     }
 
     createNewDeck = () => {
-        const {title, minimum} = this.state
+        const {title} = this.state
         const {addNewDeck, navigation} = this.props
 
-        if(title.length > minimum) {
+        if(title.length > MINIMUM_TITLE_LENGTH) {
             createDeckApi(title)
             const deck = {
                 [title]: { title, questions: [] }
@@ -39,7 +40,7 @@ class AddDeck extends Component {
                 }
                 <TextInput
                     value={title}
-                    onChangeText={title => this.setState({ title })}
+                    onChangeText={newTitle => this.setState({ title: newTitle })}
                     onFocus={() => this.setState({ title: '', error: false })}
                     style={styles.titleInput}
                 />
