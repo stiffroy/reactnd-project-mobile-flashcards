@@ -12,7 +12,7 @@ class AddDeckScreen extends Component {
         title: 'Title',
         minimum: 5,
         error: false
-    };
+    }
 
     createNewDeck = () => {
         const {title, minimum} = this.state
@@ -47,7 +47,7 @@ class AddDeckScreen extends Component {
                     <Button text='Create Deck' onPress={this.createNewDeck}/>
                 </View>
             </View>
-        );
+        )
     }
 }
 
@@ -71,10 +71,10 @@ const styles = StyleSheet.create({
     buttonWrapper: {
         alignItems: "center"
     }
-});
+})
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ addNewDeck }, dispatch);
+    return bindActionCreators({ addNewDeck }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(AddDeckScreen);
+export default connect(null, mapDispatchToProps)(AddDeckScreen)

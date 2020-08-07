@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FlatList, StyleSheet, Text } from 'react-native'
 import { connect } from 'react-redux'
-import { getDecksApi } from "../utils/api";
+import { getDecksApi } from "../utils/api"
 import { getAllDecks } from '../actions'
 import Deck from './partials/Deck'
 

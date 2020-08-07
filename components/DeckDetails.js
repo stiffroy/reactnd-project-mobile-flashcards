@@ -12,7 +12,7 @@ class IndividualDeckScreen extends Component {
     }
 
     render() {
-        const deck = this.props.deck;
+        const {deck} = this.props
         return (
             <View style={styles.deckCard}>
                 <View>
@@ -24,7 +24,7 @@ class IndividualDeckScreen extends Component {
                     <Button text='Add Card' onPress={() => this.navigate('AddCard')}/>
                 </View>
             </View>
-        );
+        )
     }
 }
 
@@ -52,10 +52,10 @@ const styles = StyleSheet.create({
         fontSize: 15,
         textAlign: 'center'
     }
-});
+})
 
 function mapStateToProps(state, ownProps) {
-    return { deck: state[ownProps.navigation.state.params.deck] };
+    return { deck: state[ownProps.navigation.state.params.deck] }
 }
 
-export default connect(mapStateToProps)(IndividualDeckScreen);
+export default connect(mapStateToProps)(IndividualDeckScreen)
