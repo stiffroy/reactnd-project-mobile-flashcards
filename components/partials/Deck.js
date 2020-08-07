@@ -1,21 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import { purple, lightPurp, white, gray } from '../../utils/colors'
 
-class Deck extends Component {
-    render() {
-        return (
-            <TouchableWithoutFeedback
-                onPress={() => this.props.showDeck(this.props.deck.title)}
-            >
-                <View style={styles.deck}>
-                    <Text style={styles.title}>{this.props.deck.title}</Text>
-                    <Text style={styles.cards}>Cards: {this.props.deck.questions.length}</Text>
-                </View>
-            </TouchableWithoutFeedback>
-        )
-    }
-}
+const Deck = () => (
+    <TouchableWithoutFeedback
+        onPress={() => this.props.showDeck(this.props.deck.title)}
+    >
+        <View style={styles.deck}>
+            <Text style={styles.title}>{this.props.deck.title}</Text>
+            <Text style={styles.cards}>Cards: {this.props.deck.questions.length}</Text>
+        </View>
+    </TouchableWithoutFeedback>
+)
 
 const styles = StyleSheet.create({
     deck: {
