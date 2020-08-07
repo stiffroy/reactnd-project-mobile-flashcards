@@ -7,6 +7,7 @@ import { gray, purple, lightPurp } from "../utils/colors"
 import DeckList from "./DeckList"
 import AddDeck from "./AddDeck"
 import DeckDetails from "./DeckDetails"
+import AddCard from "./AddCard"
 
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -58,6 +59,14 @@ const Navigation = () => (
             <Stack.Screen
                 name="deck"
                 component={DeckDetails}
+                options={{
+                    animationEnabled: true,
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="addCard"
+                component={AddCard}
                 options={{
                     animationEnabled: true,
                     headerShown: false,

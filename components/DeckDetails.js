@@ -21,7 +21,7 @@ class IndividualDeckScreen extends Component {
                 </View>
                 <View>
                     <Button text='Start Quiz' onPress={() => this.navigate('Quiz')}/>
-                    <Button text='Add Card' onPress={() => this.navigate('AddCard')}/>
+                    <Button text='Add Card' onPress={() => this.navigate('addCard')}/>
                 </View>
             </View>
         )
