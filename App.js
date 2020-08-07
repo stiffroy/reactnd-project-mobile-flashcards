@@ -1,14 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { StyleSheet, View, SafeAreaView } from 'react-native'
+import Constants from "expo-constants"
+import { StatusBar } from "expo-status-bar"
+import Navigation from "./components/MainNavigator"
+import reducer from '/reducers'
+import { purple } from "./utils/colors"
 
-export default function App() {
+function BeautifulStatusBar ({backgroundColor, ...props}) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+      <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
+        <StatusBar translucent backgroundColor={backgroundColor} {...props} />
+      </View>
+  )
+}
+
+export default class App extends Component {
+  render() {
+      return (
+          <Provider store={createStore(reducer)}>
+              <SafeAreaView style={styles.container}>
+                  <BeautifulStatusBar backgroundColor={purple} barStyle="light-content" />
+                  <Navigation />
+              </SafeAreaView>
+          </Provider>
+      )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -18,4 +36,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
